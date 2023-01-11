@@ -33,6 +33,12 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          {{- if or .Values.installPackages }}
+          command:
+           - sh
+           - -c
+           - "{{- if .Values.installPackages }}npm install {{ join " " .Values.installPackages }};{{ end }} npx directus bootstrap && npx directus start"
+          {{ end }}
           env:
             {{- if .Values.ingress.enabled }}
             - name: PUBLIC_URL
