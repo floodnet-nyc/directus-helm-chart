@@ -69,6 +69,22 @@ installPackages: []
   # - directus-extension-editorjs
   # - ./my-extension
 
+extraVolumes: []
+  # define additional volumes e.g. an extension from a config map - install using installPackages
+  # - name: my-extension
+  #   configMap:
+  #     name: myExtensionConfigMap
+  # - name: my-other-extension
+  #   secret:
+  #     secretName: myExtensionConfigMap
+
+extraVolumeMounts: []
+  # mount additional volumes into the container
+  # - name: my-extension
+  #   mountPath: /directus/my-extension
+  # - name: my-other-extension
+  #   mountPath: /directus/extensions/interfaces/my-other-extension
+
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
