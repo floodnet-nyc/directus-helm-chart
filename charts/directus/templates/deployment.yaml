@@ -47,6 +47,10 @@ spec:
             {{- if .Values.extraEnvVars }}
             {{- tpl (toYaml .Values.extraEnvVars) $ | nindent 12 }}
             {{- end }}
+          {{- if .Values.envFrom }}
+          extraEnvFrom:
+            {{- tpl (toYaml .Values.extraEnvFrom) $ | nindent 12 }}
+          {{- end }}
           ports:
             - name: http
               containerPort: 8055

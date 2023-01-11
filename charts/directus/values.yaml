@@ -64,6 +64,12 @@ extraEnvVars: {}
   #  - name: STORAGE_LOCATIONS
   #    value: "s3"
 
+extraEnvFrom: {}
+  # Extra environment variables from secrets or config maps
+  # - secretRef:
+  #   name: DIRECTUS_ENV
+  #   optional: false
+
 installPackages: []
   # Install packages before starting directus
   # - directus-extension-editorjs
