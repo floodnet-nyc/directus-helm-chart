@@ -91,6 +91,12 @@ extraVolumeMounts: []
   # - name: my-other-extension
   #   mountPath: /directus/extensions/interfaces/my-other-extension
 
+extraSidecars: []
+  # add additional sidecars to the pod
+
+extraInitContainers: []
+  # add additional init containers to the pod
+
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little

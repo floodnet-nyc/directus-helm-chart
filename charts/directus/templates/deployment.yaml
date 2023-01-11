@@ -69,6 +69,13 @@ spec:
             {{- with .Values.extraVolumeMounts }}
               {{- toYaml . | nindent 12 }}
             {{- end }}
+        {{- if .Values.extraSidecars }}
+        {{- tpl (toYaml .Values.extraSidecars) $ | nindent 12 }}
+        {{- end }}
+      {{- if .Values.extraInitContainers }}
+      initContainers:
+        {{- tpl (toYaml .Values.extraInitContainers) $ | nindent 12 }}
+      {{- end }}
       {{- if .Values.extraVolumes }}
       volumes:
         {{- tpl (toYaml .Values.extraVolumes) $ | nindent 8 }}
