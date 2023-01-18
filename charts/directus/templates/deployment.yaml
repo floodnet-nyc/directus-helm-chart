@@ -47,8 +47,8 @@ spec:
             {{- if .Values.extraEnvVars }}
             {{- tpl (toYaml .Values.extraEnvVars) $ | nindent 12 }}
             {{- end }}
-          {{- if .Values.envFrom }}
-          extraEnvFrom:
+          {{- if .Values.extraEnvFrom }}
+          envFrom:
             {{- tpl (toYaml .Values.extraEnvFrom) $ | nindent 12 }}
           {{- end }}
           ports:

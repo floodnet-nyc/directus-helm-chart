@@ -57,14 +57,14 @@ ingress:
   #    hosts:
   #      - chart-example.local
 
-extraEnvVars: {}
+extraEnvVars: []
   # An array to add extra environment variables
   # E.g.
   # extraEnvVars:
   #  - name: STORAGE_LOCATIONS
   #    value: "s3"
 
-extraEnvFrom: {}
+extraEnvFrom: []
   # Extra environment variables from secrets or config maps
   # - secretRef:
   #   name: DIRECTUS_ENV
